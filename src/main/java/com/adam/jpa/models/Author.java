@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -32,5 +33,7 @@ public class Author {
     @Column(insertable=false)
     private LocalDateTime updatedAt;
 
+    @ManyToMany(mappedBy = "authors")
+    private List<Course> courses ;
 
 }
