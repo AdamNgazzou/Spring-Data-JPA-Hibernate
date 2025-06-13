@@ -2,21 +2,21 @@ package com.adam.jpa.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
 //@Table(name = "AUTHOR_TBL")
-public class Author {
+public class Author extends BaseEntity{
 
-    @Id
-    @GeneratedValue
-    private Integer id;
+
 
     private String firstName;
 

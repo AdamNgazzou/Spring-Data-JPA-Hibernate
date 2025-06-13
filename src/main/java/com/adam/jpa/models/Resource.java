@@ -1,23 +1,17 @@
 package com.adam.jpa.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
-public class Resource {
-
-    @Id
-    @GeneratedValue
-    private Integer id;
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public class Resource extends BaseEntity{
 
     private String name;
 
