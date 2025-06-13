@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.time.LocalDateTime;
+
 @SpringBootApplication
 public class JpaApplication {
 
@@ -23,8 +25,10 @@ public class JpaApplication {
                     .lastName("Ngazzou")
                     .age(20)
                     .email("adem.ngazzou@horizon-university.tn")
+                    .createdAt(LocalDateTime.now())  // Add this line
                     .build();
             repository.save(author);
         };
+
     }
 }
